@@ -21,10 +21,26 @@ services:
     build:
       context: config
       dockerfile: Dockerfile
+      args:
+        - NAME=client1
     container_name: client-1
-    hostname: client-1
+    hostname: computer-1
     tty: true
     volumes:
-      - ./client-1:/home/client
+      - ./client1:/home/client1
+    depends_on:
+      - server
+
+  client-2:
+    build:
+      context: config
+      dockerfile: Dockerfile
+      args:
+        - NAME=client2
+    container_name: client-2
+    hostname: computer-2
+    tty: true
+    volumes:
+      - ./client2:/home/client2
     depends_on:
       - server

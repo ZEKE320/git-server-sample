@@ -12,7 +12,7 @@ RUN addgroup -S -g "${GID}" "${NAME}" && \
 
 COPY --chown=$NAME:$NAME git-ps /bin/
 
-WORKDIR /home/client
+WORKDIR /home/${NAME}
 USER $NAME
 
 RUN echo "export PS1='\e[32m\u@\h \e[35m\t \e[34m\w $(git-ps)\n\e[0m\$ '" >> ~/.bashrc &&\
