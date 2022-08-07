@@ -15,6 +15,12 @@ $ docker-comopse up -d
 $ docker-comopse down
 ```
 
+### 環境に入る（server）
+
+```
+$ docker-comopse exec server /bin/bash
+```
+
 ### 環境に入る（client1）
 
 ```
@@ -38,18 +44,27 @@ $ docker-comopse exec client-2 /bin/bash
 
 ### SSH
 
+#### Config
+
+- sshサーバーがport:`2222`でたっているため、ポートを指定しないといけない
+- `config`に記載しておくと楽
+
+```ssh:.ssh/config
+Host server.test
+Hostname server.test
+Port 2222
+```
+
 ```bash
-$ ssh -p 2222 user@server.test
+$ ssh user@server.test
 ```
 
 ## Client
 
-### 1
+1. client1
+    - hostname: `computer-1`
+    - user: `client1`
 
-- hostname: `computer-1`
-- user: `client1`
-
-### 2
-
-- hostname: `computer-2`
-- user: `client2`
+1. client2
+    - hostname: `computer-2`
+    - user: `client2`
