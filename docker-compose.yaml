@@ -3,7 +3,7 @@ services:
   server:
     image: lscr.io/linuxserver/openssh-server:latest
     container_name: openssh-server
-    hostname: server
+    hostname: server.test
     environment:
       - PUID=1000
       - PGID=1000
@@ -12,7 +12,7 @@ services:
       - USER_PASSWORD=password
       - USER_NAME=user
     volumes:
-      - ./server:/config
+      - ./server_opt:/opt
     ports:
       - "2222:2222"
     restart: unless-stopped

@@ -1,3 +1,5 @@
 [user]
 	email = user1@git.test
 	name = user1
+[init]
+	defaultBranch = main

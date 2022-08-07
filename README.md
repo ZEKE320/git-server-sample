@@ -31,7 +31,7 @@ $ docker-comopse exec client-2 /bin/bash
 
 ### INFO
 
-- hostname: `server`
+- hostname: `server.test`
 - ssh-port: `2222`
 - user: `user`
 - password: `password`
@@ -39,7 +39,7 @@ $ docker-comopse exec client-2 /bin/bash
 ### SSH
 
 ```bash
-$ ssh -p 2222 user@server
+$ ssh -p 2222 user@server.test
 ```
 
 ## Client
