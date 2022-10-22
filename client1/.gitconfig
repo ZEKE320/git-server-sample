@@ -3,3 +3,5 @@
 	name = user1
 [init]
 	defaultBranch = main
+[safe]
+	directory = /home/client1/project
